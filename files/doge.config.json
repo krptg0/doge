@@ -1,0 +1,18 @@
+{
+  "PYTHON_CMD": "python3",
+  "NUT_USER": "AdMiN",
+  "NUT_PASS": "nYsTIaNICHIm",
+  "SCRAPE_ESHOP": true,
+  "AUTO_UNLOCK": false,
+  "SCAN_FILES_EVERY_MINUTES": 60,
+  "UPDATE_DBS_EVERY_MINUTES": 480,
+  "URL_NOTIFY_NEW_FILES": "",
+  "API_KEY": null,
+  "SWITCH_ALIASES": {},
+  "USERS": {
+    "doge": {
+      "PASSWORD": "DOGE",
+      "ADMIN": true
+    }
+  }
+}
