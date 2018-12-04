@@ -45,12 +45,13 @@ docker run --name doge \
 ```The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container. So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.```
 
 
++ ` -v $(pwd):/keys` (Mandatory) - Uses current working directory to look for keys.txt
 + ` -v /path/to/nsp:/nsp` (Mandatory) - Location to your NSP folder. NSPs files must be at the root of this folder. Additional Files (Updates/DLCs/Demo/NSX) must be as follow :
-++ * /nsp/* - NSPs files
-++ * /nsp/Updates/* - NSPs update files
-++ * /nsp/DLC/* - NSPs DLC files
-++ * /nsp/NSX/* - NSXs files
-++ * /nsp/demos/* - NSPs demo files
+- * /nsp/* - NSPs files
+- * /nsp/Updates/* - NSPs update files
+- * /nsp/DLC/* - NSPs DLC files
+- * /nsp/NSX/* - NSXs files
+- * /nsp/demos/* - NSPs demo files
 
 + `-v /path/to/doge:/doge` (Optional) - Use it if you want local mount point for the whole doge folder (for config edition)
 + `-p 6093:6093` (Mandatory) - Doge WebUI port
