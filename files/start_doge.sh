@@ -1,5 +1,11 @@
 #!/bin/sh
-
+#Copy keys.txt to doge folder
+if [ -e /keys/keys.txt ]; then
+  cp /keys/keys.txt /doge/nut/keys.txt
+else
+  echo "--- YOU MUST PLACE KEYS.TXT IN THE /keys MOUNTPOINT ---"
+  exit 1
+fi
 #Set variables
 if [ -n "${NUT_USER}" ]; then
   sed -i -e 's/AdMiN/'${NUT_USER}'/g' /doge/doge.config.json

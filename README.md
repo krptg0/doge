@@ -4,34 +4,36 @@ Doge NSP Updated alongside nut server brought to you by krptg
 
 See changelog below for additionnal information
 
+**VERY IMPORTANT : MAKE SURE YOU HAVE A KEYS.TXT FILE IN THE FOLDER YOU'RE RUNNING THE DOCKER RUN COMMAND, ELSE IT WILL FAIL**
 ---
 
 ## Usage
-# In the background as server
+# Server in detached mode
+Remove -d to have it running in attached mode
+```
+docker run --name doge \ 
+           -d \ 
+           -v $(pwd):/keys
+           -v /path/to/nsp:/nsp \ 
+           -p 6093:6093 \
+           krptg/doge
+```
+# Server in detached mode with custom logins and passwords
 
 ```
 docker run --name doge \ 
-   -d \ 
-   -v /path/to/nsp:/nsp \ 
-   -p 6093:6093 \
-   krptg/doge
-```
-# In the background as server with custom logins and passwords
-
-```
-docker run --name doge \ 
-   -d \ 
-   -v \ 
-   /path/to/nsp:/nsp \ 
-   -p 6093:6093 \ 
-   -e DOGE_USER=admin \ 
-   -e DOGE_PASSWD=admin \ 
-   -e NUT_USER=admin \ 
-   -e NUT_PASSWD=admin \ 
-   krptg/doge
+           -d \ 
+           -v $(pwd):/keys
+           -v /path/to/nsp:/nsp \ 
+           -p 6093:6093 \ 
+           -e DOGE_USER=admin \ 
+           -e DOGE_PASSWD=admin \ 
+           -e NUT_USER=admin \ 
+           -e NUT_PASSWD=admin \ 
+           krptg/doge
 ```
 
-# Check logs with
+# Check logs with (if in detached mode)
 
 ```docker logs doge```
 
@@ -65,6 +67,8 @@ Access the webui at ```http://<your IP>:6093``` and login as :
 * password : `DOGE`
 
 ## Changelog
+
++ **4** : Removed built-in keys.txt, you must place keys.txt in a working directory
 
 + **3** : Now git clone instead of hard-copying doge and nut
 
