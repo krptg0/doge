@@ -10,6 +10,8 @@
 
 ### **PSA : make sure to have a keys.txt ready and placed where you will run the `docker run` command**
 
+#### Table of contents :
+
   * [Server in detached mode](#server-in-detached-mode)
   * [Server in detached mode with custom logins and passwords](#server-in-detached-mode-with-custom-logins-and-passwords)
   * [Check logs with (if in detached mode)](#check-logs-with--if-in-detached-mode-)
@@ -18,6 +20,8 @@
   * [Parameters](#parameters)
   * [Credits](#credits)
   * [Changelog](#changelog)
+
+---
 
 #### Server in detached mode
 Remove -d to have it running in attached mode
