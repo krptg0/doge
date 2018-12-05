@@ -1,4 +1,5 @@
 ![french doge](https://i.imgur.com/v2JIP3D.jpg)
+
 ***~~WOW SUCH DOGE~~***
 
 > Doge NSP Updated alongside nut server brought to you by krptg
@@ -9,7 +10,16 @@
 
 ### **PSA : make sure to have a keys.txt ready and placed where you will run the `docker run` command**
 
-### Server in detached mode
+  * [Server in detached mode](#server-in-detached-mode)
+  * [Server in detached mode with custom logins and passwords](#server-in-detached-mode-with-custom-logins-and-passwords)
+  * [Check logs with (if in detached mode)](#check-logs-with--if-in-detached-mode-)
+  * [Scrape CDN with a running container](#scrape-cdn-with-a-running-container)
+  * [Using the application](#using-the-application)
+  * [Parameters](#parameters)
+  * [Credits](#credits)
+  * [Changelog](#changelog)
+
+#### Server in detached mode
 Remove -d to have it running in attached mode
 ```
 docker run --name doge \ 
