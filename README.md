@@ -1,14 +1,15 @@
-***WOW SUCH DOGE***
+![french doge](https://i.imgur.com/v2JIP3D.jpg)
+***~~WOW SUCH DOGE~~***
 
-Doge NSP Updated alongside nut server brought to you by krptg
+> Doge NSP Updated alongside nut server brought to you by krptg
+> Everything runs in Docker, no dependency needed (except Docker)
+> Code will be always up to date with latest commits from doge and nut
 
-See changelog below for additionnal information
+*Changelog is at the end of this README*
 
-**VERY IMPORTANT : MAKE SURE YOU HAVE A KEYS.TXT FILE IN THE FOLDER YOU'RE RUNNING THE DOCKER RUN COMMAND, ELSE IT WILL FAIL**
----
+### **PSA : make sure to have a keys.txt ready and placed where you will run the `docker run` command**
 
-## Usage
-# Server in detached mode
+### Server in detached mode
 Remove -d to have it running in attached mode
 ```
 docker run --name doge \ 
@@ -18,8 +19,7 @@ docker run --name doge \
            -p 6093:6093 \
            krptg/doge
 ```
-# Server in detached mode with custom logins and passwords
-
+#### Server in detached mode with custom logins and passwords
 ```
 docker run --name doge \ 
            -d \ 
@@ -32,44 +32,40 @@ docker run --name doge \
            -e NUT_PASSWD=admin \ 
            krptg/doge
 ```
-
-# Check logs with (if in detached mode)
-
+#### Check logs with (if in detached mode)
 ```docker logs doge```
-
-# Scrape CDN with a running container
-
+#### Scrape CDN with a running container
 ```docker exec -it doge python3 /doge/nut/nut.py -s --scrape```
-
----
-
-## Parameters 
-```The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container. So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.```
-
-
-+ ` -v $(pwd):/keys` (Mandatory) - Uses current working directory to look for keys.txt
-+ ` -v /path/to/nsp:/nsp` (Mandatory) - Location to your NSP folder. NSPs files must be at the root of this folder. Additional Files (Updates/DLCs/Demo/NSX) must be as follow :
-- * /nsp/* - NSPs files
-- * /nsp/Updates/* - NSPs update files
-- * /nsp/DLC/* - NSPs DLC files
-- * /nsp/NSX/* - NSXs files
-- * /nsp/demos/* - NSPs demo files
-
-+ `-v /path/to/doge:/doge` (Optional) - Use it if you want local mount point for the whole doge folder (for config edition)
-+ `-p 6093:6093` (Mandatory) - Doge WebUI port
-+ ` -e DOGE_USER=<user>` (Optional) - Set Doge User : default to ```doge```
-+ ` -e DOGE_PASSWD=<password>` (Optional) - Set Doge Password : default to ```DOGE```
-+ ` -e NUT_USER=<user>` (Optional) - Set Nut User : default to ```AdMiN```
-+ ` -e NUT_PASSWD=<password>` (Optional) - Set Nut Password : default to ```nYsTIaNICHIm```
-
-## Using the application
+#### Using the application
 Access the webui at ```http://<your IP>:6093``` and login as :
 * login: `doge`
 * password : `DOGE`
 
-#
+---
 
-## Changelog
+#### Parameters 
+>The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container. So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.
+
+
++ ` -v $(pwd):/keys` *(Mandatory) - Uses current working directory to look for keys.txt*
++ ` -v /path/to/nsp:/nsp` *(Mandatory) - Location to your NSP folder. NSPs files must be at the root of this folder. Additional Files (Updates/DLCs/Demo/NSX) must be as follow :*
+  + /nsp/* - NSPs files
+  + /nsp/Updates/* - NSPs update files
+  + /nsp/DLC/* - NSPs DLC files
+  + /nsp/NSX/* - NSXs files
+  + /nsp/demos/* - NSPs demo files
+
++ `-v /path/to/doge:/doge` *(Optional) - Use it if you want local mount point for the whole doge folder (for config edition)*
++ `-p 6093:6093` *(Mandatory) - Doge WebUI port*
++ ` -e DOGE_USER=<user>` *(Optional) - Set Doge User : default to ```doge```*
++ ` -e DOGE_PASSWD=<password>` *(Optional) - Set Doge Password : default to ```DOGE```*
++ ` -e NUT_USER=<user>` *(Optional) - Set Nut User : default to ```AdMiN```*
++ ` -e NUT_PASSWD=<password>` *(Optional) - Set Nut Password : default to ```nYsTIaNICHIm```*
+
+#### Credits
++ wowsuchdoge : [doge](https://github.com/wowsuchdoge/doge)
++ blawar : [nut](https://github.com/blawar/nut)
+#### Changelog
 
 + **4** : Removed built-in keys.txt, you must place keys.txt in a working directory
 
