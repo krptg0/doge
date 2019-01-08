@@ -3,9 +3,7 @@
 ***~~WOW SUCH DOGE~~***
 
 > Doge NSP Updated alongside nut server brought to you by krptg
-
 > Everything runs in Docker, no dependency needed (except Docker)
-
 > Code will be always up to date with latest commits from doge and nut
 
 *Changelog is at the end of this README*
