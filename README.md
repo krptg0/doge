@@ -11,6 +11,14 @@
 *Changelog is at the end of this README*
 
 ### **PSA : make sure to have a keys.txt ready and placed where you will run the `docker run` command**
+### **PSA : Please note that current setup admits the following folder tree :**
+```
+- /nsp/ (BASE GAMES)
+- /nsp/Updates/ (UPDATES)
+- /nsp/DLC/ (DLCs)
+- /nsp/NSX/ (Locked NSX files)
+```
+### **Any other folder stucture isn't directly supported, but feel free to clone and edit files/nut.conf to your liking before building your image**
 
 #### Table of contents :
 
