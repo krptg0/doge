@@ -89,6 +89,8 @@ Access the webui at ```http://<your IP>:6093``` and login as :
 + blawar : [nut](https://github.com/blawar/nut)
 #### Changelog
 
++ **6** : Refactored Dockerfile
+
 + **4** : Removed built-in keys.txt, you must place keys.txt in a working directory
 
 + **3** : Now git clone instead of hard-copying doge and nut
