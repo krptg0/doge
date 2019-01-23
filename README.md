@@ -1,22 +1,17 @@
+
 ![french doge](https://i.imgur.com/v2JIP3D.jpg)
 
 ***~~WOW SUCH DOGE~~***
 
 > Doge NSP Updated alongside nut server brought to you by krptg
+
 > Everything runs in Docker, no dependency needed (except Docker)
+
 > Code will be always up to date with latest commits from doge and nut
 
 *Changelog is at the end of this README*
 
 ### **PSA : make sure to have a keys.txt ready and placed where you will run the `docker run` command**
-### **PSA : Please note that current setup admits the following folder tree :**
-```
-- /nsp/ (BASE GAMES)
-- /nsp/Updates/ (UPDATES)
-- /nsp/DLC/ (DLCs)
-- /nsp/NSX/ (Locked NSX files)
-```
-### **Any other folder stucture isn't directly supported, but feel free to clone and edit files/nut.conf to your liking before building your image**
 
 #### Table of contents :
 
@@ -26,13 +21,14 @@
   * [Scrape CDN with a running container](#scrape-cdn-with-a-running-container)
   * [Using the application](#using-the-application)
   * [Parameters](#parameters)
+  * [ENV variables](#env-variables)
   * [Credits](#credits)
   * [Changelog](#changelog)
 
 ---
 
 #### Server in detached mode
-Remove -d to have it running in attached mode
+>Remove -d to have it running in attached mode
 ```
 docker run --name doge \ 
            -d \ 
@@ -66,28 +62,37 @@ Access the webui at ```http://<your IP>:6093``` and login as :
 ---
 
 #### Parameters 
->The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container. So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.
-
-
 + ` -v $(pwd):/keys` *(Mandatory) - Uses current working directory to look for keys.txt*
-+ ` -v /path/to/nsp:/nsp` *(Mandatory) - Location to your NSP folder. NSPs files must be at the root of this folder. Additional Files (Updates/DLCs/Demo/NSX) must be as follow :*
++ ` -v /path/to/nsp:/nsp` *(Mandatory) - Location to your NSP folder. NSPs files must be at the root of this folder. Additional Files (Updates/DLCs/Demo/NSX) must be as follow (by default, ENV can change it, see below) :*
   + /nsp/* - NSPs files
   + /nsp/Updates/* - NSPs update files
   + /nsp/DLC/* - NSPs DLC files
   + /nsp/NSX/* - NSXs files
   + /nsp/demos/* - NSPs demo files
+---
+#### ENV variables
++ `DOGE_USER=<user>` *(Optional) - Set Doge User : default to* `doge`
++ `DOGE_PASSWD=<password>` *(Optional) - Set Doge Password : default to* `DOGE`
++ `NUT_USER=<user>` *(Optional) - Set Nut User : default to* `AdMiN`
++ `NUT_PASSWD=<password>` *(Optional) - Set Nut Password : default to* `nYsTIaNICHIm`
++ `BASE_PATH=<path>` *(Optional) - Set path for BASE nsp files : default to* `/nsp`
++ `UPDATE_PATH=<path>` *(Optional) - Set path for UPDATE nsp files : default to* `/nsp/Updates`
++ `DLC_PATH=<path>` *(Optional) - Set path for DLC nsp files : default to* `/nsp/DLC`
++ `NSX_PATH=<path>` *(Optional) - Set path for NSX nsp files : default to* `/nsp/NSX`
++ `TITLEDB=<url>` *(Optional) - Set URL for nutdb : default to* `http://snip.li/nutdb`
 
-+ `-v /path/to/doge:/doge` *(Optional) - Use it if you want local mount point for the whole doge folder (for config edition)*
-+ `-p 6093:6093` *(Mandatory) - Doge WebUI port*
-+ ` -e DOGE_USER=<user>` *(Optional) - Set Doge User : default to ```doge```*
-+ ` -e DOGE_PASSWD=<password>` *(Optional) - Set Doge Password : default to ```DOGE```*
-+ ` -e NUT_USER=<user>` *(Optional) - Set Nut User : default to ```AdMiN```*
-+ ` -e NUT_PASSWD=<password>` *(Optional) - Set Nut Password : default to ```nYsTIaNICHIm```*
+*Exemple for custom paths*
+- By default, NSP games are stored under /nsp/ and subfolders exist for Updates, DLC and NSX. The config file must take /nsp/ as its root folder for it to properly function. 
+- If, for exemple, your UPDATE files are stored under a directory called `notUPDATES`, you'll have to setup the ENV UPDATE_PATH like this :
+--  `UPDATE_PATH=notUPDATES/` (don't forget the trailing slash)
 
+---
 #### Credits
 + wowsuchdoge : [doge](https://github.com/wowsuchdoge/doge)
 + blawar : [nut](https://github.com/blawar/nut)
+---
 #### Changelog
++ **8** : Added support for custom paths, will need testing and tinkering in order to work 
 
 + **6** : Refactored Dockerfile
 
