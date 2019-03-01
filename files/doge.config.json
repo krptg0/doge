@@ -1,18 +1,20 @@
 {
-  "PYTHON_CMD": "python3",
-  "NUT_USER": "AdMiN",
-  "NUT_PASS": "nYsTIaNICHIm",
-  "SCRAPE_ESHOP": true,
-  "AUTO_UNLOCK": false,
-  "SCAN_FILES_EVERY_MINUTES": 60,
-  "UPDATE_DBS_EVERY_MINUTES": 480,
-  "URL_NOTIFY_NEW_FILES": "",
-  "API_KEY": null,
-  "SWITCH_ALIASES": {},
-  "USERS": {
-    "doge": {
-      "PASSWORD": "DOGE",
-      "ADMIN": true
-    }
+"PYTHON_CMD": "python3",
+"NUT_USER": "AdMiN",
+"NUT_PASS": "nYsTIaNICHIm",
+"SCRAPE_ESHOP": false,
+"AUTO_UNLOCK": false,
+"SCAN_FILES_EVERY_MINUTES": 60,
+"UPDATE_DBS_EVERY_MINUTES": 480,
+"URL_NOTIFY_NEW_FILES": "",
+"BOB_VERSION_DB_URL": "https://raw.githubusercontent.com/Bob123a1/CDNSP-GUI-Files/master/Config/Version_info.json",
+"NUT_TITLEDB_URL": "https://raw.githubusercontent.com/blawar/nut/master/titledb/",
+"API_KEY": null,
+"SWITCH_ALIASES": {},
+"USERS": {
+  "doge": {
+    "PASSWORD": "DOGE",
+    "ADMIN": true
   }
+}
 }
