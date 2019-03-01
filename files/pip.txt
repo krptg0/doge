@@ -1,0 +1,9 @@
+colorama
+pyopenssl
+requests
+tqdm
+unidecode
+image
+bs4
+urllib3
+flask
