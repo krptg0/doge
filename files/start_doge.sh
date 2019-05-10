@@ -1,4 +1,7 @@
 #!/bin/sh
+# Reset nut to latest working commit
+cd /doge/nut
+git reset --hard ad853c8ba773f2814317c570321b4e4ee6683393
 #Copy keys.txt to doge folder
 if [ -e /keys/keys.txt ]; then
   cp /keys/keys.txt /doge/nut/keys.txt
